@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escolha</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            text-align: center;
+            position: relative;
+        }
+        #noBtn {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transition: all 0.3s ease;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Dê o cyzinho para mim?</h1>
+        <button id="yesBtn">Sim</button>
+        <button id="noBtn">Não</button>
+    </div>
+
+    <script>
+        // Referência aos botões
+        const noBtn = document.getElementById('noBtn');
+        const yesBtn = document.getElementById('yesBtn');
+
+        // Função para mover o botão "Não" para uma posição aleatória
+        noBtn.addEventListener('mouseover', function() {
+            const randomX = Math.floor(Math.random() * (window.innerWidth - noBtn.clientWidth));
+            const randomY = Math.floor(Math.random() * (window.innerHeight - noBtn.clientHeight));
+            noBtn.style.left = randomX + 'px';
+            noBtn.style.top = randomY + 'px';
+        });
+
+        // Evento para quando o utilizador clicar em "sim"
+        yesBtn.addEventListener('click', function() {
+            window.location.href = 'https://www.youtube.com/watch?v=orWnzqBA63w'; // Substitui com o link do YouTube desejado
+        });
+    </script>
+</body>
+</html>
